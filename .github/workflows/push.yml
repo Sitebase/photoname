@@ -5,6 +5,7 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest
     steps:
+    - run: sudo apt-get install exiftool 
     - uses: actions/checkout@master
     - name: Test
       uses: skx/github-action-tester@master
