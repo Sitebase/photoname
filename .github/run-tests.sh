@@ -7,7 +7,7 @@ TEST_DIR="${GITHUB_DIR}/../test"
 echo $GITHUB_DIR
 
 for f in ${TEST_DIR}/assets/*; do
-    filename=$(basename $f)
+    filename=$(basename "${f}")
     new_filename=$(${ROOT_DIR}/photoname.sh "$f")
     expected_new_filename=$(cat "${TEST_DIR}/expected.csv" | grep "${filename}" | cut -d ';' -f2) 
     #echo "${f};${new_filename}"
@@ -15,6 +15,7 @@ for f in ${TEST_DIR}/assets/*; do
     then
         echo "[success] $f -> $new_filename";
     else
+        echo "[search] ${filename}"
         echo "[failed] expected/got:";
         echo "   - ${expected_new_filename}";
         echo "   - ${new_filename}";
