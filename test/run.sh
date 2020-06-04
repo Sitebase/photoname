@@ -12,13 +12,13 @@ for f in ${TEST_DIR}/assets/*; do
     then
         echo "[success] $f -> $new_filename";
     else
-        echo "[search] ${filename}"
         echo "[failed] expected/got:";
         echo "   - ${expected_new_filename}";
         echo "   - ${new_filename}";
-        echo "============ RAW EXIF ============"
+        echo " "
+        echo "================= RAW EXIF ================="
         exiftool $f
-        echo "============ END EXIF ============"
+        echo "================= END EXIF ================="
         exit -1
     fi
 
