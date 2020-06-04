@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install -y exiftool
+exiftool -v
 
 GITHUB_DIR=$(dirname "$0")
 ROOT_DIR="${GITHUB_DIR}/.."
