@@ -16,7 +16,7 @@ for f in ${TEST_DIR}/assets/*; do
         echo "[failed] expected/got:";
         echo "   - ${expected_new_filename}";
         echo "   - ${new_filename}";
-        #exit -1
+        exit -1
     fi
 
 done
