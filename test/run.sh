@@ -16,6 +16,9 @@ for f in ${TEST_DIR}/assets/*; do
         echo "[failed] expected/got:";
         echo "   - ${expected_new_filename}";
         echo "   - ${new_filename}";
+        echo "============ RAW EXIF ============"
+        exiftool $f
+        echo "============ END EXIF ============"
         exit -1
     fi
 
