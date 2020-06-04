@@ -1,12 +1,7 @@
 #!/bin/bash
 
-exiftool -v
-
-GITHUB_DIR=$(dirname "$0")
-ROOT_DIR="${GITHUB_DIR}/.."
-TEST_DIR="${GITHUB_DIR}/../test"
-
-echo $GITHUB_DIR
+TEST_DIR=$(dirname "$0")
+ROOT_DIR="${TEST_DIR}/.."
 
 for f in ${TEST_DIR}/assets/*; do
     filename=$(basename "${f}")
