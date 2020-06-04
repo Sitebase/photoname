@@ -1,14 +1,23 @@
+# ensure dependencies are installed
+if ! [ -x "$(command -v exiftool)" ]; then
+    echo 'Error: exiftool is not installed.' >&2
+    exit 1
+fi
+
 srcFolder=$(dirname "$1")
 
 # get some needed information out of EXIF data of media file
-timestamp=$(mdls "$1" | grep "kMDItemContentCreationDate " | cut -d "=" -f2 | cut -d " " -f2,3 | sed 's/-//g' | sed 's/://g' | sed 's/ /_/g')
-camera=$(mdls "$1" | grep 'kMDItemAcquisitionModel' | cut -d "=" -f2 | tr -d '" ' | tr "[:upper:]" "[:lower:]")
-creator=$(mdls "$1" | grep 'kMDItemCreator' | cut -d "=" -f2 | tr -d '" .' | tr "[:upper:]" "[:lower:]")
+createTimestamp=$(exiftool "$1" -s -s -s -EXIF:CreateDate -dateFormat %Y%m%d_%H%M%S)
+modifyTimestamp=$(exiftool "$1" -s -s -s -filemodifydate -dateFormat %Y%m%d_%H%M%S)
+camera=$(exiftool "$1" -s -s -s -EXIF:Model | tr -d '" ' | tr "[:upper:]" "[:lower:]")
+creator=$(exiftool "$1" -s -s -s -EXIF:Software | tr -d '" .' | tr "[:upper:]" "[:lower:]")
+
+timestamp="${createTimestamp:-$modifyTimestamp}"
 createdBy="${camera:-$creator}"
 
 # get extension using output from 'file' command which
 # also makes it possible to handle files without extension
-fullFilename=$(file "$1" | cut -d ":" -f1)
+fullFilename=$(exiftool "$1" -s -s -s -filetypeextension)
 extension=$(echo "${fullFilename##*.}" | tr "[:upper:]" "[:lower:]")
 
 if [[ $extension != "nef" && $extension != "jpg" && $extension != "jpeg" && $extension != "tif" && $extension != "mov" && $extension != "mp4" && $extension != "png" ]]; then
