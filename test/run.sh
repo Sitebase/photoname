@@ -19,7 +19,7 @@ for f in ${TEST_DIR}/assets/*; do
         echo "================= RAW EXIF ================="
         exiftool $f
         echo "================= END EXIF ================="
-        exit -1
+        #exit -1
     fi
 
 done
