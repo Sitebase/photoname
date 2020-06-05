@@ -16,6 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Install dependencies
-      run: sudo brew install exiftool 
+      run: brew install exiftool 
     - name: Run Test
       run: ./test/run.sh 
