@@ -2,7 +2,7 @@ on: push
 name: Push
 jobs:
   test1:
-    name: Unit Test Linux
+    name: Unit Test Ubuntu
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master

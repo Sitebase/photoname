@@ -10,7 +10,10 @@ chmod +x photoname.sh
 ```
 
 ## Comptible platforms
-* Tested on Mac OSX 10.15.4
+* Tested on Mac OSX
+* Tested on Ubuntu
+
+*Unit test are run each time something is pushed to this repository. Tests are run both on latest Mac OSX and Ubuntu.*
 
 ## Unit Testing
 I've added unit tests to verify change to the script are working as expected. If you find any files producing weird results. Feel free to create a issues and attach your photo so I can do some testing with it.
