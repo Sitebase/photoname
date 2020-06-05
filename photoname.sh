@@ -12,6 +12,10 @@ modifyTimestamp=$(exiftool "$1" -s -s -s -filemodifydate -dateFormat %Y%m%d_%H%M
 camera=$(exiftool "$1" -s -s -s -EXIF:Model | tr -d '" ' | tr "[:upper:]" "[:lower:]")
 creator=$(exiftool "$1" -s -s -s -EXIF:Software | tr -d '" .' | tr "[:upper:]" "[:lower:]")
 
+# fallback to modify time is not a good idea because it will change when
+# someone else is copying a file to for example another directory.
+# or even adding the files to github like for our unit tests will change the date
+# every photo should just have createTimestamp and otherwise we should ignore it
 timestamp="${createTimestamp:-$modifyTimestamp}"
 createdBy="${camera:-$creator}"
 
