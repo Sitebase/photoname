@@ -7,7 +7,7 @@ for f in ${TEST_DIR}/assets/*; do
     filename=$(basename "${f}")
     new_filename=$(${ROOT_DIR}/photoname.sh "$f")
     expected_new_filename=$(cat "${TEST_DIR}/expected.csv" | grep "${filename}" | cut -d ';' -f2) 
-    #echo "${f};${new_filename}"
+
     if [ "$new_filename" == "$expected_new_filename" ]
     then
         echo "[success] $f -> $new_filename";
@@ -19,7 +19,7 @@ for f in ${TEST_DIR}/assets/*; do
         echo "================= RAW EXIF ================="
         exiftool "$f"
         echo "================= END EXIF ================="
-        #exit -1
+        exit -1
     fi
 
 done
