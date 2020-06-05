@@ -17,7 +17,7 @@ for f in ${TEST_DIR}/assets/*; do
         echo "   - ${new_filename}";
         echo " "
         echo "================= RAW EXIF ================="
-        exiftool $f
+        exiftool "$f"
         echo "================= END EXIF ================="
         #exit -1
     fi
