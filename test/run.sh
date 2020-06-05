@@ -12,7 +12,7 @@ for f in ${TEST_DIR}/assets/*; do
     then
         echo "[success] $f -> $new_filename";
     else
-        echo "[failed] expected/got:";
+        echo "[failed] rename $f expected/got:";
         echo "   - ${expected_new_filename}";
         echo "   - ${new_filename}";
         echo " "
