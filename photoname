@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ensure dependencies are installed
 if ! [ -x "$(command -v exiftool)" ]; then
     echo 'Error: exiftool is not installed.' >&2

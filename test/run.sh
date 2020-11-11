@@ -5,7 +5,7 @@ ROOT_DIR="${TEST_DIR}/.."
 
 for f in ${TEST_DIR}/assets/*; do
     filename=$(basename "${f}")
-    new_filename=$(${ROOT_DIR}/photoname.sh "$f")
+    new_filename=$(${ROOT_DIR}/photoname "$f")
     expected_new_filename=$(cat "${TEST_DIR}/expected.csv" | grep "${filename}" | cut -d ';' -f2) 
 
     if [ "$new_filename" == "$expected_new_filename" ]

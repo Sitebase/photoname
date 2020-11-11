@@ -4,9 +4,9 @@ This script is part of my photo workflow of which you can read more about in [th
 
 ## Using the script
 ```
-wget https://raw.githubusercontent.com/Sitebase/photoname/master/photoname.sh
-chmod +x photoname.sh
-./photoname.sh dir/myfile.jpg
+wget https://raw.githubusercontent.com/Sitebase/photoname/master/photoname
+chmod +x photoname
+./photoname dir/myfile.jpg
 ```
 
 ## Comptible platforms
