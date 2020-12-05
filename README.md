@@ -1,5 +1,5 @@
 # Photoname
-Script for consistent naming of my photos I take.
+Script for consistent naming of my photos I take. More info about this [naming convention](http://localhost:4000/bullet-proof-photo-naming-strategy/).
 This script is part of my photo workflow of which you can read more about in [this blog article](https://www.sitebase.be/my-photo-management-workflow/).
 
 ## Using the script
