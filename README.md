@@ -10,8 +10,8 @@ chmod +x photoname
 ```
 
 ## Comptible platforms
-* Tested on Mac OSX
-* Tested on Ubuntu
+* Tested on Mac OSX ![Mac OSX Test](https://github.com/sitebase/photoname/workflows/MacOSX/badge.svg)
+* Tested on Ubuntu ![Ubuntu Test](https://github.com/sitebase/photoname/workflows/Ubuntu/badge.svg)
 
 *Unit test are run each time something is pushed to this repository. Tests are run both on latest Mac OSX and Ubuntu.*
 

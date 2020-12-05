@@ -1,0 +1,12 @@
+on: push
+name: MacOSX
+jobs:
+  test1:
+    name: Unit Test MacOSX
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install dependencies
+      run: brew install exiftool 
+    - name: Run Test
+      run: ./test/run.sh 
