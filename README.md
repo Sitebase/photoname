@@ -16,6 +16,6 @@ chmod +x photoname
 *Unit test are run each time something is pushed to this repository. Tests are run both on latest Mac OSX and Ubuntu.*
 
 ## Unit Testing
-I've added unit tests to verify changes to the script are working as expected. If you find any files producing weird results. Feel free to create a issues and attach your photo so I can do some testing with it.
+I've added unit tests to verify changes to the script are working as expected. If you find any files producing weird results. Feel free to create an issue and attach your photo so I can do some testing with it.
 
 >./test/run.sh
